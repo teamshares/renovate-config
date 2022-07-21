@@ -4,6 +4,6 @@ Teamshares has switched from Dependabot to Renovate (due to some issues with acc
 
 ```
   {
-    "extends": ["github>teamshares/renovate-config"]
+    "extends": ["github>teamshares/renovate-config:default.json5"]
   }
 ```
