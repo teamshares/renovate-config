@@ -1,0 +1,5 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [ "github>teamshares/renovate-config:app.json5" ],
+  "description": "This exists to create a default config for new apps... see https://www.notion.so/teamshares/Renovate-dependency-management-a5e9320b402e40f4a8ca6ab7295e04a7"
+}
