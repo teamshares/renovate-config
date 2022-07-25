@@ -1,0 +1,6 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [ "github>teamshares/renovate-config:base.json5" ],
+  lockFileMaintenance: { "enabled": false },
+  rangeStrategy: "replace", // Keep semver ranges for packages that may need to support apps on different versions
+}
