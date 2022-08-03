@@ -42,7 +42,7 @@
       automerge: true
     },
     { // Specific dependencies that have historically followed semver and feel safe to auto-merge
-      matchPackageNames: ["view_component", "cypress"],
+      matchPackageNames: ["view_component", "cypress", "bootsnap", "lint-staged", "@hotwired/stimulus"],
       matchUpdateTypes: ["minor"],
       automerge: true,
     }
