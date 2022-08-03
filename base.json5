@@ -39,6 +39,11 @@
       groupName: "all patch-level dependencies",
       groupSlug: "all-patches",
       automerge: true
+    },
+    { // Specific dependencies that have historically followed semver and feel safe to auto-merge
+      matchPackageNames: ["view_component", "cypress"],
+      matchUpdateTypes: ["minor"],
+      automerge: true,
     }
   ]
 }
