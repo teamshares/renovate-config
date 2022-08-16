@@ -16,6 +16,7 @@
     { matchManagers: ["bundler"], addLabels: ["ruby"] },
     { matchManagers: ["npm"], addLabels: ["js"] },
     { matchManagers: ["github-actions"], addLabels: ["github"] },
+    { matchUpdateTypes: ["major"], addLabels: ["update:major"] },
 
     // --- Grouping ---
     {
@@ -44,7 +45,8 @@
       automerge: true
     },
     { // Specific dependencies that have historically followed semver and feel safe to auto-merge at minor
-      matchPackageNames: ["view_component", "cypress", "bootsnap", "lint-staged", "@hotwired/stimulus"],
+      matchPackageNames: ["view_component", "cypress", "bootsnap", "lint-staged"],
+      matchPackagePrefixes: ["@hotwired", "honeybadger"],
       matchUpdateTypes: ["minor"],
       automerge: true,
     }
