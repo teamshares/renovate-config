@@ -3,6 +3,8 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   extends: [ "config:base" ],
   prConcurrentLimit: 3,
+  platformAutomerge: true,
+  automergeType: "branch", // Means no PR created by default if we're automerging
   labels: ["dependencies"],
   prBodyDefinitions: {
     Package: "{{{depNameLinked}}}",
@@ -41,7 +43,7 @@
       groupSlug: "all-patches",
       automerge: true
     },
-    { // Specific dependencies that have historically followed semver and feel safe to auto-merge
+    { // Specific dependencies that have historically followed semver and feel safe to auto-merge at minor
       matchPackageNames: ["view_component", "cypress", "bootsnap", "lint-staged", "@hotwired/stimulus"],
       matchUpdateTypes: ["minor"],
       automerge: true,
