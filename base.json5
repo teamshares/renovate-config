@@ -11,8 +11,12 @@
   },
   timezone: "America/New_York",
   schedule: ["after 9pm and before 5am every weekday", "every weekend"],
-  ignoreDeps: [],
+  ignoreDeps: [
+    "ruby",               // Manually control new ruby version rollout
+    "node",               // Manually control new node version rollout
+  ],
   packageRules: [
+    // --- Labels ---
     { matchManagers: ["bundler"], addLabels: ["ruby"] },
     { matchManagers: ["npm"], addLabels: ["js"] },
     { matchManagers: ["github-actions"], addLabels: ["github"] },
@@ -30,6 +34,7 @@
     },
 
     // --- Auto-Merges ---
+
     { // Automatically merge our linters if CI passes
       matchDepTypes: ["devDependencies"],
       matchPackagePatterns: ["eslint", "prettier", "rubocop", "stylelint"],
@@ -49,6 +54,14 @@
       matchPackagePrefixes: ["@hotwired", "honeybadger"],
       matchUpdateTypes: ["minor"],
       automerge: true,
+    },
+
+    // --- Exclusions ---
+
+    { // Major rails upgrades will require manual work+scheduling
+      matchPackagePatterns: ["rails"],
+      matchUpdateTypes: ["major"],
+      enabled: false
     }
   ]
 }
