@@ -52,7 +52,8 @@
     { // Specific dependencies that have historically followed semver and feel safe to auto-merge at minor
       matchPackageNames: [
         "view_component", "cypress", "bootsnap", "lint-staged", "paper_trail", "annotate", "money-rails", "faraday",
-        "awesome_print", "table_print", "analytics-ruby", "honeybadger", "jest", "webmock", "pgsync", "stylelint"
+        "awesome_print", "table_print", "analytics-ruby", "honeybadger", "jest", "webmock", "pgsync", "stylelint",
+        "aasm", "newrelic_rpm", "rspec-rails",
       ],
       matchPackagePrefixes: ["@hotwired", "honeybadger", "@honeybadger-io", "pry-", "twilio"],
       matchUpdateTypes: ["minor"],
