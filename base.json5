@@ -1,7 +1,7 @@
 // Shared code between the expected entrypoints (lib and/or app)
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  extends: [ "config:base" ],
+  extends: [ "config:base", ":semanticCommitsDisabled" ],
   prConcurrentLimit: 3,
   platformAutomerge: true,
   automergeType: "branch", // Means no PR created by default if we're automerging
