@@ -53,9 +53,10 @@
       matchPackageNames: [
         "view_component", "cypress", "bootsnap", "lint-staged", "paper_trail", "annotate", "money-rails", "faraday",
         "awesome_print", "table_print", "analytics-ruby", "honeybadger", "jest", "webmock", "pgsync", "stylelint",
-        "aasm", "newrelic_rpm", "rspec-rails",
+        "aasm", "newrelic_rpm", "rspec-rails", "cypress-rails", "slack-ruby-client", "twilio-ruby", "webmock",
+        "puppeteer-ruby", "faker", "puma",
       ],
-      matchPackagePrefixes: ["@hotwired", "honeybadger", "@honeybadger-io", "pry-", "twilio"],
+      matchPackagePrefixes: ["@hotwired", "honeybadger", "@honeybadger-io", "pry-", "twilio", "@babel"],
       matchUpdateTypes: ["minor"],
       automerge: true,
     },
