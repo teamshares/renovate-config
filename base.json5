@@ -34,13 +34,6 @@
     },
 
     // --- Auto-Merges ---
-
-    { // Automatically merge our linters (if CI passes)
-      matchDepTypes: ["devDependencies"],
-      matchPackagePatterns: ["eslint", "prettier", "rubocop", "stylelint"],
-      groupName: "linters",
-      automerge: true
-    },
     { // Automatically group and merge patch-level updates (for packages w/ version larger than 0) when CI passes
       matchUpdateTypes: ["patch"],
       matchCurrentVersion: "!/^0/",
@@ -49,18 +42,38 @@
       automerge: true
     },
 
+    {
+      matchDepTypes: ["devDependencies"],
+      matchPackagePatterns: ["eslint", "prettier", "rubocop", "stylelint", "stylelint-config-sass-guidelines", "husky", "is-ci", "lint-staged"],
+      groupName: "linters",
+      matchUpdateTypes: ["minor"],
+      automerge: true
+    },
+    {
+      matchDepTypes: ["devDependencies"],
+      matchPackagePatterns: ["jest", "jest-esbuild", "jest-environment-jsdom", "jsdom"],
+      groupName: "jest-ecosystem",
+      matchUpdateTypes: ["minor"],
+      automerge: true
+    },
+
     { // Specific dependencies that have historically followed semver and feel safe to auto-merge at minor
       matchPackageNames: [
-        "view_component", "cypress", "bootsnap", "lint-staged", "paper_trail", "annotate", "money-rails", "faraday",
-        "awesome_print", "table_print", "analytics-ruby", "honeybadger", "jest", "webmock", "pgsync", "stylelint",
+        "view_component", "bootsnap", "paper_trail", "annotate", "money-rails", "faraday",
+        "awesome_print", "table_print", "analytics-ruby", "honeybadger", "webmock", "pgsync",
         "aasm", "newrelic_rpm", "rspec-rails", "cypress-rails", "slack-ruby-client", "twilio-ruby", "webmock",
-        "puppeteer-ruby", "faker", "puma", "jsbundling-rails", "cssbundling-rails", "faker", "simplecov", "listen"
+        "puppeteer-ruby", "faker", "puma", "jsbundling-rails", "cssbundling-rails", "faker", "simplecov", "listen",
+
+        // These are dev dependencies of every Rails app
+        "concurrently", "cypress", "cypress-file-upload", "postcss", "postcss-cli",
+
       ],
       matchUpdateTypes: ["minor"],
       automerge: true,
     },
+
     { // Specific dependency groups that have historically followed semver and feel safe to auto-merge at minor
-      matchPackagePrefixes: ["@hotwired", "honeybadger", "@honeybadger-io", "pry-", "twilio", "@babel"],
+      matchPackagePrefixes: ["@hotwired", "honeybadger", "@honeybadger-io", "pry-", "twilio", "@testing-library"],
       matchUpdateTypes: ["minor"],
       automerge: true,
     },
