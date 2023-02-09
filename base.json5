@@ -2,7 +2,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   extends: [ "config:base", ":semanticCommitsDisabled" ],
-  prConcurrentLimit: 3,
+  prConcurrentLimit: 5,
   platformAutomerge: true,
   automergeType: "branch", // Means no PR created by default if we're automerging
   labels: ["dependencies"],
