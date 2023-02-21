@@ -1,0 +1,12 @@
+// Shared base for our data team repos (data, dbt)
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [ "github>teamshares/renovate-config:base.json5" ],
+  description: "Default base config for teamshares' data repos",
+  lockFileMaintenance: { enabled: true },
+  rangeStrategy: "pin", // They had some compelling points: https://docs.renovatebot.com/dependency-pinning/
+  packageRules: [
+    // --- Labels ---
+    { matchManagers: ["pip_requirements"], addLabels: ["python"] },
+  ]
+}
