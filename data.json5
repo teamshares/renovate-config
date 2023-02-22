@@ -5,6 +5,10 @@
   description: "Default base config for teamshares' data repos",
   lockFileMaintenance: { enabled: true },
   rangeStrategy: "pin", // They had some compelling points: https://docs.renovatebot.com/dependency-pinning/
+  prConcurrentLimit: 2, // Smaller team -- let's keep the limit a bit less overwhelming
+  ignoreDeps: [
+    "python",           // Manually control new python version rollout
+  ],
   packageRules: [
     // --- Labels ---
     { matchManagers: ["pip_requirements"], addLabels: ["python"] },
