@@ -4,4 +4,10 @@
   description: "Default base config for teamshares *applications* (i.e. end users, will pin specific versions)",
   lockFileMaintenance: { enabled: true },
   rangeStrategy: "pin", // They had some compelling points: https://docs.renovatebot.com/dependency-pinning/
+  packageRules: [
+    {
+      matchDepTypes: ["devDependencies"],
+      rangeStrategy: "replace", // Try not pinning dev dependencies -- we have to duplicate some from the shared repos, and we don't really need to update everything in lockstep
+    }
+  ]
 }
