@@ -15,13 +15,13 @@
     "ruby",               // Manually control new ruby version rollout
     "node",               // Manually control new node version rollout
   ],
-  hostRules: [
-    {
-      "matchHost": "github.com/teamshares",
-      "token": "{{ secrets.BUNDLE_GITHUB__COM }}",
-      "hostType": "github-tags",
-    },
-  ],
+  // hostRules: [
+  //   {
+  //     "matchHost": "github.com/teamshares",
+  //     "token": "{{ secrets.BUNDLE_GITHUB__COM }}",
+  //     "hostType": "github-tags",
+  //   },
+  // ],
   packageRules: [
     // --- Labels ---
     { matchManagers: ["bundler"], addLabels: ["ruby"] },
