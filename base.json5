@@ -16,15 +16,11 @@
     "node",               // Manually control new node version rollout
   ],
   hostRules: [
-    // Enables fetching our private shared-rails-engine gem
+    // Enables fetching our private teamshares-rails gem
     {
       "matchHost": "github.com/teamshares",
       "hostType": "rubygems",
-      // Apparently (https://github.com/renovatebot/renovate/discussions/22779) 3rd party apps cannot access github secrets.
-      // The workaround is to use encrypted secrets, generated here: https://app.renovatebot.com/encrypt
-      "encrypted": {
-        "token": "wcFMA/xDdHCJBTolAQ/+OMEc0QqZGK7X47addrKFssqAQx6h7br7VO7+IJ54uHAX0sJWS6jou5+sk94eRTOvPlx97DxTvofrSwb48XQi9nImt4m9DcmxpLp8P8GvVdmPaZL+69jCBzQvsMwnPNHmAhK1CCCYWp4u4b+Ti7cD6J43XQLvKUA0vU2LjY/FsddGHqjj3kStZehC+Fo+Q35XHV8Mc+laMKxFaghooSd2Ut95ZDG3fBFag33Rga7mYC0FWDJQa/6HjdeUUKQQfeWUAfUy1Pb9t2RvA2CSbi8eH9HfrcLPZjubIsTJ6cWqDIy17CHlMfGyzNX2qKuLBXydFRptRSkIaUeEKxmyH4BxfFzhNrpoHlliQPMz5QM6XTaFqFX5UMe5IHEj6v1RskyD40LO4pDzUoT0xyKdycBCRW9z1xMse1QDwdu7F7zYabrSSPtMV76Em9XrRBkVtkMneZFV3/HK3Rvr1f20w2vh1Z2sqaxyyR67yE4xGQQm27BZD+7/sIj7tVKrbnIZ9E6woDSc0etR5f32Se3EUHLM/tkZAK/5OG3Mvy3dK9SLkwIeXVpBRD/voP2McVRb/frOBKxtlZg4SAVVCRr70RF60EZzN+p1aJ+Kf3bdgqAHAh3IJOeo/fEwNkr2ycpxwLyb/v5qZbx7K1K7jUBJ/n6+sVAh0B4PEPTUi2e5lqI4BFbSeQGQntM5/mRclM8SxhL7yGyrh6v6oaXy9dxF2WYh+HzNHAKl0K4kvllxCXLi5bjFTABs6PSGG4EkUcfDS2hKl4f+1bJaSW67EtF9YxJrO+5tvR8xtPspkwcsyBh4VVJbVmq4LOJzliOuLUCinfkndGZugdU8raBsofs",
-      }
+      "token": "{{ secrets.GITHUB_COM_TOKEN }}"
     },
   ],
   packageRules: [
