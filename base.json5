@@ -36,8 +36,7 @@
       groupName: "flipper",
     },
     {
-      matchManagers: ["bundler"],
-      packagePatterns: ["^aws-"],
+      packagePatterns: ["^aws-sdk-"],
       groupName: "AWS SDK"
     },
 
