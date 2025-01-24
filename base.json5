@@ -89,7 +89,7 @@
 
     { // Major rails upgrades will require manual work+scheduling
       matchPackagePatterns: ["rails"],
-      matchUpdateTypes: ["major"],
+      matchUpdateTypes: ["major", "minor"],
       enabled: false
     }
   ]
