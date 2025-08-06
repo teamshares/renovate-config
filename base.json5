@@ -19,7 +19,7 @@
     // Enables fetching our private teamshares-rails gem
     {
       "matchHost": "github.com/teamshares",
-      "hostType": "rubygems",
+      "hostType": "github",
       "token": "{{ secrets.GITHUB_COM_TOKEN }}"
     },
   ],
@@ -90,6 +90,11 @@
     { // Major rails upgrades will require manual work+scheduling
       matchPackagePatterns: ["rails"],
       matchUpdateTypes: ["major", "minor"],
+      enabled: false
+    },
+
+    { // Manually control new postgres version rollout for CI (keep in sync with production)
+      matchPackageNames: ["public.ecr.aws/docker/library/postgres"],
       enabled: false
     }
   ]
