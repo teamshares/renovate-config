@@ -16,9 +16,9 @@
     "node",               // Manually control new node version rollout
   ],
   hostRules: [
-    // Enables fetching our private teamshares-rails gem
+    // Enables fetching our private org resources; scope to domain instead of path
     {
-      "matchHost": "github.com/teamshares",
+      "matchHost": "github.com",
       "hostType": "github",
       "token": "{{ secrets.GITHUB_COM_TOKEN }}"
     },
@@ -28,6 +28,10 @@
     { matchManagers: ["bundler"], addLabels: ["ruby"] },
     { matchManagers: ["npm"], addLabels: ["js"] },
     { matchManagers: ["github-actions"], addLabels: ["github"] },
+    { // Ensure github-actions uses the default GitHub host and not a custom registry
+      matchManagers: ["github-actions"],
+      registryUrls: ["https://github.com"]
+    },
     { matchUpdateTypes: ["major"], addLabels: ["update:major"] },
 
     // --- Grouping ---
