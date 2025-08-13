@@ -16,10 +16,10 @@
     "node",               // Manually control new node version rollout
   ],
   hostRules: [
-    // Enables fetching our private org resources; scope to domain instead of path
+    // Enables fetching our private teamshares-rails gem
     {
-      "matchHost": "github.com",
-      "hostType": "github",
+      "matchHost": "github.com/teamshares",
+      "hostType": "rubygems",
       "token": "{{ secrets.GITHUB_COM_TOKEN }}"
     },
   ],
