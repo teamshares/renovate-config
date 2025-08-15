@@ -70,10 +70,13 @@
 
     { // Specific dependencies that have historically followed semver and feel safe to auto-merge at minor
       matchPackageNames: [
-        "view_component", "bootsnap", "paper_trail", "annotate", "money-rails", "faraday",
-        "awesome_print", "table_print", "analytics-ruby", "honeybadger", "webmock", "pgsync",
-        "aasm", "newrelic_rpm", "rspec-rails", "cypress-rails", "slack-ruby-client", "twilio-ruby", "webmock",
-        "puppeteer-ruby", "faker", "puma", "jsbundling-rails", "cssbundling-rails", "faker", "simplecov", "listen",
+        "aasm", "analytics-ruby", "annotate", "awesome_print", "aws-sdk-glue",
+        "bootsnap", "cssbundling-rails", "cypress-rails",
+        "faker", "faraday", "honeybadger",
+        "jsbundling-rails", "listen", "money-rails", "newrelic_rpm",
+        "paper_trail", "pgsync", "puma", "puppeteer-ruby",
+        "rspec-rails", "simplecov", "slack-ruby-client",
+        "table_print", "twilio-ruby", "view_component", "webmock",
 
         // These are dev dependencies of every Rails app
         "concurrently", "cypress", "cypress-file-upload", "postcss", "postcss-cli",
