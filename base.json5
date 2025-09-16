@@ -10,7 +10,7 @@
     Package: "{{{depNameLinked}}}",
   },
   timezone: "America/New_York",
-  schedule: ["after 9pm and before 5am every weekday", "every weekend"],
+  schedule: ["after 9pm and before 5am every weekday"],
   ignoreDeps: [
     "ruby",               // Manually control new ruby version rollout
     "node",               // Manually control new node version rollout
@@ -70,7 +70,7 @@
 
     { // Specific dependencies that have historically followed semver and feel safe to auto-merge at minor
       matchPackageNames: [
-        "aasm", "analytics-ruby", "annotate", "awesome_print", "aws-sdk-glue",
+        "aasm", "analytics-ruby", "annotate", "awesome_print", "aws", "aws-sdk-",
         "bootsnap", "cssbundling-rails", "cypress-rails",
         "faker", "faraday", "honeybadger",
         "jsbundling-rails", "listen", "money-rails", "newrelic_rpm",
