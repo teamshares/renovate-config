@@ -32,6 +32,13 @@
       matchManagers: ["github-actions"],
       registryUrls: ["https://github.com"]
     },
+    // Workaround Renovate bug: bundler manager sets registryUrls for git-based gems (git-refs),
+    // which don't support custom registries → "Custom registries are not allowed" warning (renovate#37432)
+    {
+      matchManagers: ["bundler"],
+      matchDatasources: ["git-refs"],
+      registryUrls: []
+    },
     { matchUpdateTypes: ["major"], addLabels: ["update:major"] },
 
     // --- Grouping ---
