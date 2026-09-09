@@ -114,6 +114,21 @@
     { // Manually control new postgres version rollout for CI (keep in sync with production)
       matchPackageNames: ["public.ecr.aws/docker/library/postgres"],
       enabled: false
+    },
+
+    { // teamshares/* repos (teamshares-rails, design-system, shoelace, etc.) require manual
+      // downstream changes and are released manually — never open or automerge Renovate PRs for
+      // them. Bundler git deps (e.g. teamshares_rails) set packageName to the full git URL rather
+      // than an owner/repo shorthand, so match that form too alongside npm-scoped packages and any
+      // owner/repo-style packageName (e.g. GitHub Actions).
+      matchPackagePatterns: ["^@teamshares/", "^teamshares/", "^https://github\\.com/teamshares/"],
+      enabled: false
+    },
+
+    { // Belt-and-braces for git-sourced gems: match depName directly too, in case Renovate ever
+      // resolves packageRules against depName instead of packageName for this datasource.
+      matchDepNames: ["teamshares_rails"],
+      enabled: false
     }
   ]
 }
