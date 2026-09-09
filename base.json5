@@ -114,6 +114,12 @@
     { // Manually control new postgres version rollout for CI (keep in sync with production)
       matchPackageNames: ["public.ecr.aws/docker/library/postgres"],
       enabled: false
+    },
+
+    { // teamshares/* repos (teamshares-rails, design-system, shoelace, etc.) require manual
+      // downstream changes and are released manually — never open or automerge Renovate PRs for them
+      matchPackagePatterns: ["^teamshares/", "^@teamshares/"],
+      enabled: false
     }
   ]
 }
